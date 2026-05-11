@@ -10,13 +10,29 @@
  --bl:#60a5fa;--gn:#4ade80;--am:#fbbf24;--rd:#f87171;--or:#fb923c;--pu:#a78bfa;--tl:#2dd4bf;
  --blb:rgba(96,165,250,.1);--gnb:rgba(74,222,128,.1);--amb:rgba(251,191,36,.1);
  --rdb:rgba(248,113,113,.1);--orb:rgba(251,146,60,.1);}
+html[data-theme="offwhite"]{--bg:#faf8f3;--sf:#fffdf8;--sf2:#f8f6f0;--sf3:#f2eee4;--bd:#e3ded4;--bd2:#d5cec1;
+ --tx:#172033;--tx2:#475569;--tx3:#7a8696;
+ --bl:#2563eb;--gn:#14804a;--am:#c47a00;--rd:#dc2626;--or:#c05621;--pu:#7c3aed;--tl:#0f766e;
+ --blb:rgba(37,99,235,.08);--gnb:rgba(20,128,74,.08);--amb:rgba(196,122,0,.10);
+ --rdb:rgba(220,38,38,.09);--orb:rgba(192,86,33,.10);}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--tx);font-family:"Inter",system-ui,sans-serif;font-size:13px;height:100vh;overflow:hidden}
+html[data-theme="offwhite"] body{background:#fbfaf7}
+html[data-theme="offwhite"] .hdr{box-shadow:0 1px 8px rgba(15,23,42,.04)}
 .app{display:flex;flex-direction:column;height:100vh}
 .hdr{background:var(--sf);border-bottom:1px solid var(--bd);padding:0 20px;height:52px;display:flex;align-items:center;gap:14px;flex-shrink:0}
 .logo{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#3b82f6,#06b6d4);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:10px;color:#fff;letter-spacing:.5px;flex-shrink:0}
 .ht1{font-size:14px;font-weight:600}.ht2{font-size:11px;color:var(--tx3);margin-top:1px}
 .hdr-r{margin-left:auto;display:flex;gap:7px;flex-wrap:wrap;align-items:center}
+.theme-wrap{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:700;color:var(--tx2);white-space:nowrap}
+.theme-label{color:var(--tx3)}
+.theme-label.active{color:var(--tx);font-weight:800}
+.thm{width:42px;height:22px;border:1px solid var(--bd2);background:var(--sf2);border-radius:999px;padding:2px;cursor:pointer;transition:all .18s ease;position:relative;display:inline-flex;align-items:center}
+.thm:before{content:"";width:16px;height:16px;border-radius:50%;background:var(--tx3);box-shadow:0 1px 4px rgba(0,0,0,.25);transform:translateX(0);transition:all .18s ease}
+html[data-theme="offwhite"] .thm{background:#2563eb;border-color:#2563eb}
+html[data-theme="offwhite"] .thm:before{background:#fff;transform:translateX(18px)}
+.thm:hover{border-color:var(--bl)}
+.theme-icon{font-size:13px;line-height:1;opacity:.9}
 .hbg{font-size:11px;padding:2px 9px;border-radius:20px;font-weight:500;white-space:nowrap}
 .hb-bl{background:var(--blb);border:1px solid rgba(96,165,250,.3);color:var(--bl)}
 .hb-gn{background:var(--gnb);border:1px solid rgba(74,222,128,.3);color:var(--gn)}
@@ -76,6 +92,14 @@ select:focus{border-color:var(--bl)} select:disabled{opacity:.4;cursor:default} 
 .dmini{background:rgba(15,17,23,.35);border:1px solid var(--bd);border-radius:8px;padding:8px}
 .dml{font-size:9px;text-transform:uppercase;letter-spacing:.6px;color:var(--tx3);font-weight:600;margin-bottom:4px}
 .dmv{font-size:11px;color:var(--tx);line-height:1.45}
+html[data-theme="offwhite"] .dcard{background:#fffdfb;border-color:#e5e0d6;box-shadow:0 4px 16px rgba(15,23,42,.03)}
+html[data-theme="offwhite"] .dmini{background:#f7f9fd;border-color:#dbe3ef;color:#1f2937}
+html[data-theme="offwhite"] .dmini.hfield{background:#f6f9ff;border-color:#d7e2f4}
+html[data-theme="offwhite"] .dmini.efield{background:#f8fbf7;border-color:#dbe8d8}
+html[data-theme="offwhite"] .dml{color:#64748b}
+html[data-theme="offwhite"] .dmini.hfield .dml{color:#4f6fc7}
+html[data-theme="offwhite"] .dmini.efield .dml{color:#32815c}
+html[data-theme="offwhite"] .dmv{color:#243044}
 .dfoot{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:8px}
 .emptycol{padding:24px 12px;color:var(--tx3);font-size:12px;text-align:center;line-height:1.7}
 @media(max-width:1100px){.dual{grid-template-columns:1fr}.sb{width:265px}.hdr-r{display:none}}
@@ -98,6 +122,9 @@ select:focus{border-color:var(--bl)} select:disabled{opacity:.4;cursor:default} 
 .ic{background:var(--sf);border:1px solid var(--bd);border-radius:10px;padding:13px}
 .icl{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.7px;color:var(--tx3);margin-bottom:6px}
 .icv{font-size:12px;color:var(--tx);line-height:1.55}
+html[data-theme="offwhite"] .ic{background:#f8fafc;border-color:#dbe3ef}
+html[data-theme="offwhite"] .rb{background:#f8fafc}
+
 .rs{background:var(--sf);border:1px solid var(--bd);border-radius:10px;padding:17px;margin-bottom:13px}
 .st{font-size:13px;font-weight:600;color:var(--tx);margin-bottom:13px;display:flex;align-items:center;gap:7px}
 .si{width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
@@ -143,6 +170,11 @@ select:focus{border-color:var(--bl)} select:disabled{opacity:.4;cursor:default} 
   <div><div class="ht1">Algihaz Construction &mdash; HIRA &amp; EAISR Module</div>
   <div class="ht2">Hazard Identification &amp; Risk Assessment &nbsp;|&nbsp; Environmental Aspects &amp; Impacts Register</div></div>
   <div class="hdr-r">
+    <div class="theme-wrap" aria-label="Theme selector">
+      <span class="theme-label" id="darkLbl">Dark</span>
+      <button class="thm" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle Dark / Off-White theme"></button>
+      <span class="theme-label" id="offLbl">Off-White</span>
+    </div>
     <span class="hbg hb-bl">HIRA: 1,088 records</span>
     <span class="hbg hb-gn">EAISR: 1,584 records</span>
     <span class="hbg hb-gy">72 Activities &nbsp;|&nbsp; Rev 01</span>
@@ -165,6 +197,13 @@ select:focus{border-color:var(--bl)} select:disabled{opacity:.4;cursor:default} 
       <span class="ftag" data-f="h" onclick="togF(this)">High (12-19)</span>
       <span class="ftag" data-f="m" onclick="togF(this)">Medium (6-11)</span>
       <span class="ftag" data-f="l" onclick="togF(this)">Low (1-5)</span>
+    </div>
+    <div class="fsec">
+      <div class="sbl" style="width:100%;margin-bottom:2px">Filter by Residual Risk</div>
+      <span class="ftag" data-rf="c" onclick="togRF(this)">Critical (20+)</span>
+      <span class="ftag" data-rf="h" onclick="togRF(this)">High (12-19)</span>
+      <span class="ftag" data-rf="m" onclick="togRF(this)">Medium (6-11)</span>
+      <span class="ftag" data-rf="l" onclick="togRF(this)">Low (1-5)</span>
     </div>
     <div class="icnt" id="icnt">Select an activity to begin</div>
     <div class="lst" id="lst">
@@ -243,7 +282,27 @@ function atCls(t){if(!t)return'atdef';const tl=t.toLowerCase();if(tl.includes('l
 function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 
 // ---- STATE ----
-let aFilters=new Set(), activeTab='both', activeKey=null, curItems=[];
+let aFilters=new Set(), rFilters=new Set(), activeTab='both', activeKey=null, curItems=[];
+
+function applyTheme(theme){
+  const t=theme==='offwhite'?'offwhite':'dark';
+  document.documentElement.setAttribute('data-theme',t);
+  localStorage.setItem('hiraTheme',t);
+  const b=document.getElementById('themeBtn');
+  const darkLbl=document.getElementById('darkLbl');
+  const offLbl=document.getElementById('offLbl');
+  if(b){
+    b.setAttribute('aria-pressed',t==='offwhite'?'true':'false');
+    b.title=t==='offwhite'?'Switch to Dark theme':'Switch to Off-White theme';
+  }
+  if(darkLbl)darkLbl.classList.toggle('active',t==='dark');
+  if(offLbl)offLbl.classList.toggle('active',t==='offwhite');
+}
+function toggleTheme(){
+  const cur=document.documentElement.getAttribute('data-theme')||'dark';
+  applyTheme(cur==='offwhite'?'dark':'offwhite');
+}
+applyTheme(localStorage.getItem('hiraTheme')||'dark');
 
 function setTab(el){
   document.querySelectorAll('.tab').forEach(t=>t.className='tab');
@@ -256,6 +315,13 @@ function togF(el){
   const f=el.dataset.f, cls={c:'fc',h:'fh',m:'fm',l:'fl'}[f];
   if(el.classList.contains(cls)){el.classList.remove(cls);aFilters.delete(f);}
   else{el.classList.add(cls);aFilters.add(f);}
+  activeKey=null; renderList(); showOverview();
+}
+
+function togRF(el){
+  const f=el.dataset.rf, cls={c:'fc',h:'fh',m:'fm',l:'fl'}[f];
+  if(el.classList.contains(cls)){el.classList.remove(cls);rFilters.delete(f);}
+  else{el.classList.add(cls);rFilters.add(f);}
   activeKey=null; renderList(); showOverview();
 }
 
@@ -277,22 +343,25 @@ function renderList(){
   if(activeTab!=='eaisr'){
     let rows=(d.h||[]).filter(r=>!sa||r[0]===sa);
     if(aFilters.size>0)rows=rows.filter(r=>aFilters.has(rfc(r[6])));
-    hItems=rows.map((r,i)=>({type:'h',key:'h'+i,data:r,title:r[1],sub:r[0],risk:r[6]}));
+    if(rFilters.size>0)rows=rows.filter(r=>rFilters.has(rfc(r[10])));
+    hItems=rows.map((r,i)=>({type:'h',key:'h'+i,data:r,title:r[1],sub:r[0],risk:r[6],res:r[10]}));
   }
   if(activeTab!=='hira'){
     let rows=(d.e||[]).filter(r=>!sa||r[0]===sa);
     if(aFilters.size>0)rows=rows.filter(r=>aFilters.has(rfc(r[6])));
-    eItems=rows.map((r,i)=>({type:'e',key:'e'+i,data:r,title:r[2],sub:r[0],risk:r[6]}));
+    if(rFilters.size>0)rows=rows.filter(r=>rFilters.has(rfc(r[10])));
+    eItems=rows.map((r,i)=>({type:'e',key:'e'+i,data:r,title:r[2],sub:r[0],risk:r[6],res:r[10]}));
   }
   curItems=[...hItems,...eItems];
   const tot=curItems.length, hT=hItems.length, eT=eItems.length;
-  const crit=curItems.filter(x=>x.risk>=20).length, high=curItems.filter(x=>x.risk>=12&&x.risk<20).length;
+  const crit=curItems.filter(x=>x.risk>=20).length, high=curItems.filter(x=>x.risk>=12&&x.risk<20).length, rHigh=curItems.filter(x=>x.res>=12).length;
   document.getElementById('icnt').innerHTML=
     '<strong>'+tot+'</strong> records'+
     (hT?' &middot; <span style="color:var(--bl)">'+hT+' hazards</span>':'')+
     (eT?' &middot; <span style="color:var(--gn)">'+eT+' aspects</span>':'')+
     (crit?' &middot; <span style="color:var(--rd)">'+crit+' critical</span>':'')+
-    (high?' &middot; <span style="color:var(--or)">'+high+' high</span>':'');
+    (high?' &middot; <span style="color:var(--or)">'+high+' high</span>':'')+
+    (rHigh?' &middot; <span style="color:var(--gn)">'+rHigh+' residual high+</span>':'');
   if(!tot){document.getElementById('lst').innerHTML='<div class="ehi">No records match the current filter.</div>';return;}
   let html='';
   if(hItems.length){
@@ -302,7 +371,8 @@ function renderList(){
       return '<div class="itm'+(it.key===activeKey?' ah':'')+'" data-key="'+it.key+'" onclick="selItem(this)">'+
         '<div class="itn">'+esc(it.title)+'</div>'+
         '<div class="itm-meta"><span class="its">'+esc(it.sub)+'</span>'+
-        '<span class="itg tgh">HIRA</span><span class="rp '+r.rp+'">'+it.risk+'</span></div></div>';
+        '<span class="itg tgh">HIRA</span><span class="rp '+r.rp+'">I:'+it.risk+'</span><span class="rp '+rlv(it.res).rp+'">R:'+it.res+'</span></div></div>';
+
     }).join('');
   }
   if(eItems.length){
@@ -312,7 +382,8 @@ function renderList(){
       return '<div class="itm'+(it.key===activeKey?' ae':'')+'" data-key="'+it.key+'" onclick="selItem(this)">'+
         '<div class="itn">'+esc(it.title)+'</div>'+
         '<div class="itm-meta"><span class="its">'+esc(it.sub)+'</span>'+
-        '<span class="itg tge">'+esc(it.data[1]||'Env')+'</span><span class="rp '+r.rp+'">'+it.risk+'</span></div></div>';
+        '<span class="itg tge">'+esc(it.data[1]||'Env')+'</span><span class="rp '+r.rp+'">I:'+it.risk+'</span><span class="rp '+rlv(it.res).rp+'">R:'+it.res+'</span></div></div>';
+
     }).join('');
   }
   document.getElementById('lst').innerHTML=html;
@@ -342,13 +413,13 @@ function miniCard(it){
   if(it.type==='h'){
     return '<div class="dcard" data-key="'+k+'" onclick="selItemByKey(\''+k+'\')">'+
       '<div class="dct">'+esc(sf(d[1]))+'</div><div class="dcs">'+esc(sf(d[0]))+'</div>'+
-      '<div class="dgrid"><div class="dmini"><div class="dml">Consequence</div><div class="dmv">'+esc(sf(d[3]))+'</div></div><div class="dmini"><div class="dml">Controls</div><div class="dmv">'+esc(compactCtrl(d[7]))+'</div></div></div>'+
-      '<div class="dfoot"><span class="itg tgh">HIRA</span><span class="rp '+r.rp+'">'+it.risk+'</span><span class="rbd '+r.bd+'">'+r.l+'</span></div></div>';
+      '<div class="dgrid"><div class="dmini hfield"><div class="dml">Consequence</div><div class="dmv">'+esc(sf(d[3]))+'</div></div><div class="dmini hfield"><div class="dml">Controls</div><div class="dmv">'+esc(compactCtrl(d[7]))+'</div></div></div>'+
+      '<div class="dfoot"><span class="itg tgh">HIRA</span><span class="rp '+r.rp+'">I:'+it.risk+'</span><span class="rp '+rlv(it.res).rp+'">R:'+it.res+'</span><span class="rbd '+r.bd+'">'+r.l+'</span></div></div>';
   }
   return '<div class="dcard" data-key="'+k+'" onclick="selItemByKey(\''+k+'\')">'+
     '<div class="dct">'+esc(sf(d[2]))+'</div><div class="dcs">'+esc(sf(d[0]))+'</div>'+
-    '<div class="dgrid"><div class="dmini"><div class="dml">Impact</div><div class="dmv">'+esc(sf(d[3]))+'</div></div><div class="dmini"><div class="dml">Controls</div><div class="dmv">'+esc(compactCtrl(d[7]))+'</div></div></div>'+
-    '<div class="dfoot"><span class="itg tge">'+esc(sf(d[1]))+'</span><span class="rp '+r.rp+'">'+it.risk+'</span><span class="rbd '+r.bd+'">'+r.l+'</span></div></div>';
+    '<div class="dgrid"><div class="dmini efield"><div class="dml">Impact</div><div class="dmv">'+esc(sf(d[3]))+'</div></div><div class="dmini hfield"><div class="dml">Controls</div><div class="dmv">'+esc(compactCtrl(d[7]))+'</div></div></div>'+
+    '<div class="dfoot"><span class="itg tge">'+esc(sf(d[1]))+'</span><span class="rp '+r.rp+'">I:'+it.risk+'</span><span class="rp '+rlv(it.res).rp+'">R:'+it.res+'</span><span class="rbd '+r.bd+'">'+r.l+'</span></div></div>';
 }
 
 function showOverview(){
@@ -357,10 +428,11 @@ function showOverview(){
   const hs=curItems.filter(x=>x.type==='h'), es=curItems.filter(x=>x.type==='e');
   const title=esc(act);
   const sub=sa?('Sub Activity: '+esc(sa)):'All Sub Activities';
+  const filterTxt=(aFilters.size||rFilters.size)?' | Filters: '+(aFilters.size?'Inherent risk ':'')+(rFilters.size?'Residual risk':''):'';
   const hHtml=hs.length?hs.map(miniCard).join(''):'<div class="emptycol">No HIRA hazards available for the selected filter.</div>';
   const eHtml=es.length?es.map(miniCard).join(''):'<div class="emptycol">No EAISR aspects available for the selected filter.</div>';
   document.getElementById('mn').innerHTML=
-    '<div class="full-head"><div class="fh-title">'+title+'</div><div class="fh-sub">'+sub+' &nbsp;|&nbsp; '+hs.length+' HIRA hazards &nbsp;|&nbsp; '+es.length+' EAISR aspects. Click any card to open the full detailed record.</div></div>'+
+    '<div class="full-head"><div class="fh-title">'+title+'</div><div class="fh-sub">'+sub+' &nbsp;|&nbsp; '+hs.length+' HIRA hazards &nbsp;|&nbsp; '+es.length+' EAISR aspects'+filterTxt+'. Click any card to open the full detailed record.</div></div>'+
     '<div class="dual"><section class="pnl"><div class="pnh" style="color:var(--bl)">&#9632; HIRA Details <small>'+hs.length+' records</small></div><div class="pbody">'+hHtml+'</div></section>'+
     '<section class="pnl"><div class="pnh" style="color:var(--gn)">&#9632; EAISR Details <small>'+es.length+' records</small></div><div class="pbody">'+eHtml+'</div></section></div>';
 }
